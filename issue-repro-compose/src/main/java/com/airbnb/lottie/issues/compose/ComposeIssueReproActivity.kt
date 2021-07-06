@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.rememberLottieComposition
 
 class ComposeIssueReproActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +19,7 @@ class ComposeIssueReproActivity : AppCompatActivity() {
 
     @Composable
     fun Content() {
-        LottieAnimation(null)
+        val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.loading))
+        LottieAnimation(composition)
     }
 }
